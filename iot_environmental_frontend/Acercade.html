@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Acerca del proyecto Variables Ambientales" />
+    <title>Acerca de | Variables Ambientales</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+<header class="site-header">
+    <div class="inner">
+        <h1 class="site-title">Variables Ambientales</h1>
+        <nav>
+            <ul class="nav-list">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="Acercade.html" class="active">Acerca de</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
+
+        <!-- Botón de tema -->
+        <button class="toggle-theme" onclick="toggleDarkMode()" id="theme-btn">🌙</button>
+    </div>
+</header>
+
+<main>
+    <section class="about">
+        <div class="inner">
+            <h2>¿Quiénes Somos?</h2>
+            <p class="about-text">
+                Este proyecto fue desarrollado con el objetivo de monitorear variables ambientales como 
+                la humedad, temperatura y radiación UV. La información es recopilada en tiempo real desde 
+                sensores y almacenada en Firebase para su visualización web.
+            </p>
+
+            <h3>Creadores del Proyecto</h3>
+            <div class="team-container">
+                <article class="team-card">
+                    <h4>Mariel Herrera</h4>
+                </article>
+                <article class="team-card">
+                    <h4>Zadkiel Umaña</h4>
+                </article>
+                <article class="team-card">
+                    <h4>Alexa Rojas</h4>
+                </article>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="inner">
+        <p>© 2025 - Proyecto Web Variables Ambientales</p>
+    </div>
+</footer>
+
+<!-- Script universal del modo oscuro -->
+<script>
+    // Verificar si hay un modo almacenado y aplicarlo al cargar la página
+    document.addEventListener("DOMContentLoaded", () => {
+        const savedMode = localStorage.getItem("theme");
+        if (savedMode === "dark") {
+            document.body.classList.add("dark-mode");
+            document.getElementById("theme-btn").textContent = "☀️";
+        }
+    });
+
+    function toggleDarkMode() {
+        const body = document.body;
+        body.classList.toggle("dark-mode");
+
+        const isDark = body.classList.contains("dark-mode");
+
+        // Guardar selección en el almacenamiento del navegador
+        localStorage.setItem("theme", isDark ? "dark" : "light");
+
+        // Cambia el ícono del botón dependiendo del modo
+        document.getElementById("theme-btn").textContent = isDark ? "☀️" : "🌙";
+    }
+</script>
+</body>
+</html>
