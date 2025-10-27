@@ -1,0 +1,70 @@
+/* Estilos para la sección de historial */
+.history-data {
+    padding: 2rem 0;
+}
+
+.history-data h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.table-container {
+    overflow-x: auto;
+    background-color: var(--color-light);
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.data-table thead th {
+    background-color: var(--color-primary);
+    color: var(--color-light);
+    padding: 12px 15px;
+    text-align: left;
+    font-weight: 600;
+}
+
+.data-table tbody td {
+    padding: 10px 15px;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.data-table tbody tr:hover {
+    background-color: #f6f6f6;
+}
+
+.data-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Estilos para el estado en la tabla */
+.status-cell {
+    font-weight: 500;
+    padding: 4px 8px;
+    border-radius: 4px;
+    color: var(--color-light);
+    display: inline-block;
+}
+
+/* Colores de estado reutilizados del style.css */
+.data-table .status-low { background-color: var(--status-low); }
+.data-table .status-normal { background-color: var(--status-normal); }
+.data-table .status-high { background-color: var(--status-high); }
+.data-table .status-very-high { background-color: var(--status-very-high); }
+.data-table .status-extreme { background-color: var(--status-extreme); }
+
+.loading-row,
+#no-data-message {
+    text-align: center;
+    font-style: italic;
+    color: #777;
+    padding: 20px;
+}
+
+.hidden {
+    display: none;
+}

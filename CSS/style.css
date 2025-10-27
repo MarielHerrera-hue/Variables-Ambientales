@@ -1,0 +1,342 @@
+/* --- Reseteo y Globales --- */
+:root {
+  --color-primary: #007bff;
+  --color-dark: #2c3e50;
+  --color-light: #ffffff;
+  --color-bg: #f4f7f6;
+  --color-text: #333;
+  --color-border: #e0e0e0;
+
+  --status-low: #3498db;
+  --status-normal: #2ecc71;
+  --status-high: #f39c12;
+  --status-very-high: #e74c3c;
+  --status-extreme: #8e44ad;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* --- Encabezado --- */
+.site-header {
+  background-color: var(--color-light);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  padding: 1rem 0;
+}
+
+.site-header .inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+}
+
+.nav-list li {
+  margin-left: 25px;
+}
+
+.nav-list a {
+  text-decoration: none;
+  color: var(--color-dark);
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-list a:hover {
+  color: var(--color-primary);
+}
+
+/* --- Contenido Principal --- */
+main {
+  padding: 3rem 0;
+}
+
+.dashboard h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--color-dark);
+  margin-bottom: 2rem;
+}
+
+/* --- Contenedor de Tarjetas --- */
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+/* --- Estilo de Tarjetas --- */
+.card {
+  background-color: var(--color-light);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 25px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.card-img {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 15px auto;
+  object-fit: contain;
+}
+
+.card h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: var(--color-dark);
+}
+
+/* --- Nuevos estilos para datos --- */
+.card-data-wrapper {
+  margin-bottom: 20px;
+  min-height: 60px; /* Evita que la tarjeta salte de tamaño */
+}
+
+.card-data {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: 1.2;
+}
+
+.card-status {
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 20px;
+  color: var(--color-light);
+  background-color: var(--color-border); /* Color por defecto */
+}
+
+.card-data-placeholder {
+  font-size: 0.9rem;
+  color: #777;
+  min-height: 60px;
+  margin-bottom: 20px;
+}
+
+/* --- Colores de Estado --- */
+.status-low { background-color: var(--status-low); }
+.status-normal { background-color: var(--status-normal); }
+.status-high { background-color: var(--status-high); }
+.status-very-high { background-color: var(--status-very-high); }
+.status-extreme { background-color: var(--status-extreme); }
+
+
+.card-link {
+  display: inline-block;
+  text-decoration: none;
+  background-color: var(--color-primary);
+  color: var(--color-light);
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 500;
+  margin-top: auto; /* Empuja el botón al final */
+  transition: background-color 0.3s ease;
+}
+
+.card-link:hover {
+  background-color: #0056b3;
+}
+
+/* --- Pie de Página --- */
+.site-footer {
+  text-align: center;
+  padding: 2rem 0;
+  background-color: var(--color-dark);
+  color: var(--color-light);
+  margin-top: 2rem;
+}
+
+/* --- Responsivo --- */
+@media (max-width: 768px) {
+  .site-header .inner {
+    flex-direction: column;
+  }
+  
+  .site-title {
+    margin-bottom: 15px;
+  }
+}
+/* Botón modo oscuro */
+.toggle-theme {
+    background-color: transparent;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    padding: 8px 15px;
+    margin-left: 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 16px;
+}
+
+.toggle-theme:hover {
+    background-color: #ffffff;
+    color: #0d47a1;
+}
+/* ----------------- Estilos generales ----------------- */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #e3f2fd;
+    color: #0d47a1;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+header {
+    background-color: #1565c0;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+.container {
+    max-width: 700px;
+    margin: 40px auto;
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h2 {
+    color: #0d47a1;
+}
+
+/* Botones */
+.toggle-btn, .home-btn {
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+.toggle-btn {
+    background-color: #0d47a1;
+    color: white;
+}
+
+.home-btn {
+    background-color: #90caf9;
+    color: #0d47a1;
+    margin-left: 10px;
+}
+
+/* ----------------- Modo oscuro ----------------- */
+.dark-mode {
+    background-color: #121212;
+    color: #eeeeee;
+}
+
+.dark-mode header {
+    background-color: #0a2a46;
+}
+
+.dark-mode .container {
+    background-color: #1e1e1e;
+    box-shadow: 0 4px 12px rgba(255,255,255,0.1);
+}
+
+.dark-mode .toggle-btn {
+    background-color: #90caf9;
+    color: #0d47a1;
+}
+
+.dark-mode .home-btn {
+    background-color: #0d47a1;
+    color: white;
+}
+
+/* Modo oscuro */
+.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+.dark-mode .site-header {
+    background-color: #0a2a46;
+}
+
+.dark-mode .inner,
+.dark-mode main,
+.dark-mode .dashboard {
+    color: #e0e0e0;
+}
+
+.dark-mode .card {
+    background-color: #1e1e1e;
+    box-shadow: 0 4px 10px rgba(255,255,255,0.1);
+}
+
+.dark-mode footer {
+    background-color: #0a2a46;
+    color: #e0e0e0;
+}
+
+.dark-mode a {
+    color: #90caf9;
+}
+
+.dark-mode .toggle-theme {
+    border-color: #90caf9;
+    color: #90caf9;
+}
+
+.dark-mode .toggle-theme:hover {
+    background-color: #90caf9;
+    color: #0d47a1;
+}
+
+.dark-mode img {
+    filter: none !important;
+}
+
+.dark-mode img {
+    filter: brightness(0.95);
+}
